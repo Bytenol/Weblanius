@@ -1,0 +1,17 @@
+svg {
+    width: calc(100vw / 20);
+    margin: 10px;
+}
+
+#cvs {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+.Scene {
+    display: none;
+}

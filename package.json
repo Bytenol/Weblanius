@@ -1,0 +1,25 @@
+{
+  "name": "weblanius",
+  "version": "1.0.0",
+  "description": "A collection of all my simple web projects",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bytenol/Weblanius.git"
+  },
+  "author": "github.com/Bytenol",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bytenol/Weblanius/issues"
+  },
+  "homepage": "https://github.com/Bytenol/Weblanius#readme",
+  "dependencies": {
+    "dat.gui": "^0.7.9",
+    "nodemon": "^3.1.4",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.5"
+  }
+}

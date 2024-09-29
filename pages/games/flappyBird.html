@@ -1,0 +1,104 @@
+<!doctype html>
+<!--Created around late 2022 - early 2023-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="shader/x-vertex" id="vertex-shader">
+        attribute vec4 aPos;
+        attribute vec2 aTexCoord;
+
+        uniform mat4 uProjectionMatrix;
+        uniform mat4 uModelMatrix;
+
+        varying vec2 vTexCoord;
+
+        void main() {
+            gl_Position = uProjectionMatrix * uModelMatrix * aPos;;
+            vTexCoord = aTexCoord;
+        }
+    </script>
+    <script type="shader/x-fragment" id="fragment-shader">
+        precision mediump float;
+
+        uniform sampler2D uTexture;
+        varying vec2 vTexCoord;
+
+        void main() {
+            gl_FragColor = texture2D(uTexture, vTexCoord);
+        }
+    </script>
+    <title>Flappy Bird 2d</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: relative;
+            top: -100%;
+            background-color: rgb(0, 0, 0);
+        }
+
+        #score {
+            width: 100%;
+            position: relative;
+            top: -195%;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bolder;
+            color: white;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            -webkit-text-stroke: 2px;
+            -webkit-text-stroke-color: #222;
+        }
+
+        #splash {
+            width: 100%;
+            height: 100%;
+            font-size: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family:'Courier New', Courier, monospace;
+            background-color: #222;
+            transition: 1s;
+            position: relative;
+            top: 0%;
+            z-index: 100;
+        }
+    </style>
+    <script src="../../build/src/flappyBird/main.js" type="module"></script>
+</head>
+<body>
+    <section id="game-area">
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_die.wav" id="die-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_hit.wav" id="hit-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_point.wav" id="point-aud"></audio>
+        <audio src="https://raw.githubusercontent.com/V-Play/FlappyBird/master/assets/audio/sfx_wing.wav" id="wing-aud"></audio>
+        <section id="splash">
+            <h2><span style="color:aqua">Byte</span><span style="color:beige;">nol</span></h2>
+            <small style="color:aliceblue">Loading...</small>
+        </section>
+        <canvas id="gl" tabindex="1"></canvas>
+        <p id="score"></p>
+    </section>
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    position: fixed;
+};
+
+canvas {
+    display: block;
+}
+
+#info {
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 0px;
+    color: lightgray;
+    background-color: rgba(0, 0, 0, .4);
+    font-size: 0.7em;
+    font-style: italic;
+    /* line-height: 0.5;
+    letter-spacing: 0.093em;
+    left: calc(100vw - 30vw);
+    border: 1px solid lightgray;
+    padding-left: 5px; */
+}
