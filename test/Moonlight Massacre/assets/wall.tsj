@@ -1,0 +1,14 @@
+{ "columns":8,
+ "image":"wall.png",
+ "imageheight":512,
+ "imagewidth":512,
+ "margin":0,
+ "name":"wall",
+ "spacing":0,
+ "tilecount":64,
+ "tiledversion":"1.10.1",
+ "tileheight":64,
+ "tilewidth":64,
+ "type":"tileset",
+ "version":"1.10"
+}

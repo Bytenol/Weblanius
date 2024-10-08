@@ -1,0 +1,35 @@
+* {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+button {
+    width: 40%;
+    outline: none;
+    border: none;
+    border-radius: 0.5em;
+    font-weight: bold;
+    background-color: teal;
+}
+
+#gameBoard {
+    width: min(calc(min(100vw, 100vh) * 0.9), 410px);
+    aspect-ratio: 1;
+    border-radius: 0.5em;
+}
+
+.DynamicTile {
+    transform: scale(0.3);
+    transition: 0.2s;
+}
+
+.SvgIcon {
+    width: min(calc(min(100vw, 100vh) * 0.08), 32px);
+    aspect-ratio: 1;
+}
